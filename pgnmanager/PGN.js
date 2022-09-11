@@ -35,9 +35,10 @@ class PGN {
 	 * 	with enclosed PGNs (I wouldn't know), but it's intended for use with
 	 * 	actual PGNs.
 	 * 	
-	 * 	@param pgn-	The text of the PGN itself
-	 * 	@param user-	The user being observed. This is probably config.user 
-	 * 					but can be any user.
+	 * 	@param Stringpgn-	The text of the PGN itself
+	 * 	@param String user-	The username being observed. If you're using this
+	 * 				code straight out of the box, it's config.user, but
+	 * 				it can be any username passed as a string.
 	 * 	
 	 */
 	constructor(pgn, user) {
@@ -100,7 +101,7 @@ class PGN {
 								
 								break;
 								
-							// Hey look, I lost :()
+							// Hey look, I lost :(
 							case "\"1-0\"":
 								
 								if (this.white()) {
@@ -141,7 +142,7 @@ class PGN {
 					// I am way too proud of this regex. Feel free to steal it. 
 					// It's just matches chess moves. 
 					// If you get strange behavior with this, consider taking off 
-					// the ^ and $.
+					// the ^ and $ at the beginning and the end.
 					if (move.match(/^((O\-O)|(O\-O\-O)|([a-hRQNBK][a-h]?[1-8]?x?[a-hA-H]{0,2}[1-8])|([a-h](x[a-h])?[18]=[QRBN]))[+#]?$/)) {
 						
 						this.moves[i] = move;
