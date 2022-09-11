@@ -137,8 +137,10 @@ class Move {
 	 * 	to get a different name.
 	 * 	
 	 * 	@return A String in this format:
-	 * 	Games: x (x%)	Wins: x (x%)	Losses: x (x%)	Draws: x (x%)		NameOfMove
-	 * 	Games: 1093 (78%)	Wins: 557 (50.9%)	Losses: 508 (46.4%)	Draws: 28(2.5%)		d5
+	 * 	Games: NameOfMove	x (x%)	Wins: x (x%)	Losses: x (x%)	Draws: x (x%)
+	 * 	Games: d5	1093 (78%)	Wins: 557 (50.9%)	Losses: 508 (46.4%)	Draws: 28(2.5%)
+	 *	
+	 *	@TODO: Figure out how to make the tabs line up
 	 */
 	prompt() {
 		
@@ -150,9 +152,9 @@ class Move {
 			
 		}
 		
-		return head + "\tWins: " + this.wins + " (" + p(this.wins, this.count) + ")\tLosses: " + 
+		return head + "\t\" + this.name + "\tWins: " + this.wins + " (" + p(this.wins, this.count) + ")\tLosses: " + 
 				this.losses + " (" + p(this.losses, this.count) + ")\tDraws: " + this.draws + "(" +
-				p(this.draws, this.count) + ")\t\t" + this.name;
+				p(this.draws, this.count) + ");
 		
 	}
 	
